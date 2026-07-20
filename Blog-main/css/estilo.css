@@ -1,5 +1,6 @@
 *{
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Gabriela", serif;
+     font-weight: 400;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -30,7 +31,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: silver;
+    background-color:#E9967A;
     padding: 20px;
     text-transform: uppercase;
     list-style: none;
@@ -183,6 +184,7 @@ main {
 }
 
 #tag-list a, #categories-list a {
+    text-decoration: none;
     color: #656565;
     transition: .5s;
 }
