@@ -1,71 +1,63 @@
-<?php include_once("templates/header.php");
-if (isset($_GET['id'])) {
-    $postId = $_GET['id'];
-    $currentPost;
-    foreach ($posts as $post) {
-        if ($post['id'] == $postId) {
-            $currentPost = $post;
-        }
-    }
+<?php 
+  include_once("templates/header.php"); // Carrega o topo e o array $posts
 
-}
+  // Verifica se o ID foi passado na URL[cite: 3]
+  if (isset($_GET['id'])) {
+      $postId = $_GET['id'];
+      $currentPost = null;
 
+      // Busca a receita correspondente ao ID[cite: 3]
+      foreach ($posts as $post) {
+          if ($post['id'] == $postId) {
+              $currentPost = $post;
+              break;
+          }
+      }
+  }
 ?>
+
 <main id="post-container">
-    <div class="content-container">
-        <h1 id="main-title"><?= $currentPost['title'] ?></h1>
-        <p id="post-description"><?= $currentPost['description'] ?></p>
-        <div class="img-container">
-            <img src="<?= BASE_URL ?>/img/<?= $currentPost['img'] ?>" alt="<?= $currentPost['title'] ?>">
+    <?php if (isset($currentPost)): ?>
+        <div class="content-container">
+            <h1 id="main-title"><?= $currentPost['title'] ?></h1>
+            <p id="post-description"><?= $currentPost['description'] ?></p>
+            
+            <div class="img-container">
+                <img src="<?= BASE_URL ?>/img/<?= $currentPost['img'] ?>" alt="<?= $currentPost['title'] ?>">
+            </div>
+
+            <h2 style="font-family: 'Gabriela', serif; color: #B85C4C; margin: 25px 0 15px 0;">Modo de Preparo</h2>
+            
+            <div class="post-content">
+                <ol style="padding-left: 20px; line-height: 1.8;">
+                    <!-- Percorre e exibe cada passo do preparo da receita atual -->
+                    <?php foreach ($currentPost['preparo'] as $passo): ?>
+                        <li style="margin-bottom: 10px;"><?= $passo ?></li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
         </div>
-        <p class="post-content">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, explicabo provident,
-            voluptatum, veniam nihil repellat eveniet quae adipisci exercitationem quos minus corrupti placeat veritatis
-            architecto excepturi laudantium nulla tenetur cupiditate.
-            Odit saepe voluptas voluptates, iusto minima dolore deleniti corporis itaque, rem facere inventore in sed
-            cumque voluptatibus unde! Assumenda nam aspernatur eveniet id illo inventore ratione laboriosam iusto culpa
-            provident.
-            Nam blanditiis autem fugiat officiis animi, adipisci consequuntur minima. Mollitia atque iste sapiente quod
-            pariatur necessitatibus minus voluptatem rerum eos modi enim perspiciatis provident ducimus, iure nostrum
-            nobis eum iusto.
-            Perspiciatis sed numquam animi quae assumenda nesciunt voluptatibus rem! Deserunt, quae ex, pariatur nemo
-            eveniet ipsam delectus aperiam aut quas blanditiis repellat quibusdam debitis sequi odit nostrum? Dolores,
-            iure quam!
-            Beatae vel corrupti laborum repudiandae, placeat neque officiis odit provident reiciendis ducimus amet rem.
-            Exercitationem similique itaque labore asperiores quasi officia aspernatur quas soluta quos. Quasi aliquam
-            in laboriosam illum.
-        </p>
-        <p class="post-content">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, explicabo provident,
-            voluptatum, veniam nihil repellat eveniet quae adipisci exercitationem quos minus corrupti placeat veritatis
-            architecto excepturi laudantium nulla tenetur cupiditate.
-            Odit saepe voluptas voluptates, iusto minima dolore deleniti corporis itaque, rem facere inventore in sed
-            cumque voluptatibus unde! Assumenda nam aspernatur eveniet id illo inventore ratione laboriosam iusto culpa
-            provident.
-            Nam blanditiis autem fugiat officiis animi, adipisci consequuntur minima. Mollitia atque iste sapiente quod
-            pariatur necessitatibus minus voluptatem rerum eos modi enim perspiciatis provident ducimus, iure nostrum
-            nobis eum iusto.
-            Perspiciatis sed numquam animi quae assumenda nesciunt voluptatibus rem! Deserunt, quae ex, pariatur nemo
-            eveniet ipsam delectus aperiam aut quas blanditiis repellat quibusdam debitis sequi odit nostrum? Dolores,
-            iure quam!
-            Beatae vel corrupti laborum repudiandae, placeat neque officiis odit provident reiciendis ducimus amet rem.
-            Exercitationem similique itaque labore asperiores quasi officia aspernatur quas soluta quos. Quasi aliquam
-            in laboriosam illum.
-        </p>
-    </div>
-    <aside id="nav-container">
-        <h3 id="tags-title">Tags</h3>
-        <ul id="tag-list">
-            <?php foreach ($currentPost['tags'] as $tag): ?>
-                <li><a href="#"><?= $tag ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-        <h3 id="categories-title">Categorias</h3>
-        <ul id="categories-list">
-            <?php foreach ($categories as $category): ?>
-                <li><a href="#"><?= $category ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </aside>
+
+       <!-- Barra Lateral Adaptada para Ingredientes da Receita Atual -->
+     <aside id="nav-container">
+    <h3 id="tags-title">Ingredientes</h3>
+    <ul id="tag-list">
+        <?php foreach ($currentPost['ingredientes'] as $ingrediente): ?>
+            <li class="ingrediente-item"><?= $ingrediente ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h3 id="categories-title" style="margin-top: 30px;">Categorias</h3>
+    <ul id="categories-list">
+        <?php foreach ($categories as $category): ?>
+            <li><a href="#"><?= $category ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</aside>
+
+    <?php else: ?>
+        <p style="text-align: center; width: 100%;">Receita não encontrada!</p>
+    <?php endif; ?>
 </main>
+
 <?php include_once("templates/footer.php"); ?>

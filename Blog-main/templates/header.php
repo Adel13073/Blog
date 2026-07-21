@@ -23,7 +23,7 @@
 <body>
     <header class="cabeca">
         <a href="<?= BASE_URL ?>" id="logo">
-            <img src="<?= BASE_URL ?>/img/logo.svg" alt="Logotipo">
+            <img src="<?= BASE_URL ?>/img/logo.jpg" alt="Logotipo">
         </a>
         <nav id="navbar">
             <li><a href="<?= BASE_URL ?>"  class="nav-link">Home</a></li>

@@ -1,23 +1,25 @@
-*{
+* {
     font-family: "Gabriela", serif;
-     font-weight: 400;
+    font-weight: 400;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     min-height: 100vh;
     position: relative;
+    background-color: #FDFBF7; /* Fundo creme/baunilha suave */
+    color: #2C1E1B;
 }
 
 main {
     margin-bottom: 250px;
 }
 
-/*NAVBAR*/
+/* NAVBAR */
 
-#logo{
+#logo {
     position: absolute;
     top: 10px;
     left: 9.5%;
@@ -27,34 +29,34 @@ main {
     width: 50px;
 }
 
-#navbar{
+#navbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#E9967A;
+    background-color: #B85C4C; /* Terracota */
     padding: 20px;
     text-transform: uppercase;
     list-style: none;
-
 }
 
-#navbar li{
+#navbar li {
     margin: 0 10px;
     padding: 5px;
 }
 
-#navbar .nav-link{
-    color: #fff;
+#navbar .nav-link {
+    color: #FFFFFF;
     text-decoration: none;
     transition: .5s;
     font-size: 14px;
 }
 
-#navbar .nav-link:hover{
-    color: #999;
+#navbar .nav-link:hover {
+    color: #FDFBF7;
+    opacity: 0.8;
 }
 
-/*FINALIZANDO A HOME*/
+/* FINALIZANDO A HOME */
 #title-container {
     min-width: 500px;
     text-align: center;
@@ -63,11 +65,13 @@ main {
 
 #title-container h1 {
     font-size: 50px;
+    color: #B85C4C;
 }
+
 #title-container p {
     margin-top: 10px;
     text-transform: uppercase;
-    color: #999;
+    color: #2C1E1B;
 }
 
 #posts-container {
@@ -82,17 +86,22 @@ main {
     min-width: 100%;
 }
 
-.post-box{
+.post-box {
     flex: 1 1 0;
     margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E6DFD5;
+    border-radius: 8px;
+    padding: 15px;
 }
 
 .post-box:nth-child(3) {
     margin: 0 1%;
 }
 
-.post-box img{
+.post-box img {
     width: 100%;
+    border-radius: 6px;
 }
 
 .post-box .post-title {
@@ -100,114 +109,232 @@ main {
     margin: 10px 0;
 }
 
-.post-box .post-title a:hover{
-    color: #999;
+.post-box .post-title a {
+    color: #2C1E1B;
+    text-decoration: none;
+}
+
+.post-box .post-title a:hover {
+    color: #D98A7B;
     transition: .5s;
 }
 
 .post-box .post-description {
-    color: #666;
+    color: #555555;
 }
 
-.tags-container{
+.tags-container {
     margin-top: 10px;
 }
 
-.tags-container a{
+.tags-container a {
     font-size: 14px;
-    color: #333;
+    color: #B85C4C;
+    background-color: #FDFBF7;
+    border: 1px solid #E6DFD5;
+    padding: 3px 10px;
+    border-radius: 15px;
     display: inline-block;
     margin-right: 5px;
+    text-decoration: none;
 }
 
-/*POST*/
-#post-container{
+/* POST (DETALHES DA RECEITA) */
+#post-container {
     display: grid;
     grid-template-columns: 75% 25%;
     grid-template-rows: auto;
     grid-template-areas: "main sidebar";
-    grid-gap: 10px;
+    grid-gap: 20px;
     padding-top: 30px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 250px;
 }
 
-.content-container{
+.content-container {
     grid-area: main;
 }
 
-#main-title{
+#main-title {
     font-size: 36px;
-    margin-bottom: 40px;
+    color: #B85C4C;
+    margin-bottom: 20px;
 }
 
 #post-description {
     font-style: italic;
-    margin-bottom: 40px;
+    color: #555555;
+    margin-bottom: 30px;
 }
 
 .post-content {
     line-height: 1.8;
     margin: 10px 0;
+    color: #2C1E1B;
 }
 
-.img-container{
+.img-container {
     margin-bottom: 30px;
 }
 
-.img-container img{
+.img-container img {
     width: 60%;
+    border-radius: 8px;
 }
 
-/*POST ASIDE*/
-.nav-container{
+/* POST ASIDE (BARRA LATERAL DE INGREDIENTES E CATEGORIAS) */
+#nav-container, .nav-container {
     grid-area: sidebar;
 }
 
-#tags-title, #categories-title{
-    font-size: 24px;
-    margin-bottom: 10px;
-    background-color: #666;
-    color: #fff;
+#tags-title, #categories-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    background-color: #B85C4C;
+    color: #FFFFFF;
     text-align: center;
     padding: 10px;
-    font-weight: 300;
+    font-weight: 400;
+    border-radius: 6px;
 }
 
 #tag-list, #categories-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-#tag-list li, #categories-list li {
+/* Estilo do item de ingrediente (.ingrediente-item) */
+#tag-list li, .ingrediente-item {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 10px;
+    color: #2C1E1B;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* Ponto minimalista delicado para os ingredientes */
+#tag-list li::before, .ingrediente-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #D98A7B; /* Ponto em tom Rosa Chá */
+    border-radius: 50%;
+}
+
+#categories-list li {
     margin-bottom: 10px;
 }
 
 #tag-list a, #categories-list a {
     text-decoration: none;
-    color: #656565;
+    color: #2C1E1B;
     transition: .5s;
 }
 
 #tag-list a:hover, #categories-list a:hover {
-    color: silver;
+    color: #D98A7B;
 }
 
-/*FOOTER*/
-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+/* CONTACTO.PHP */
+#contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E6DFD5;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(44, 30, 27, 0.03);
+}
+
+.contact-intro h1 {
+    font-family: 'Gabriela', serif;
+    color: #B85C4C;
+    margin-bottom: 15px;
     text-align: center;
-    background-color: silver;
-    color: #fff;
-    padding: 50px 0;
 }
 
-/*Responsividade*/
+.contact-intro p {
+    color: #2C1E1B;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Gabriela', serif;
+    color: #2C1E1B;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #E6DFD5;
+    border-radius: 8px;
+    background-color: #FDFBF7;
+    color: #2C1E1B;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #D98A7B;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #B85C4C;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    font-family: 'Gabriela', serif;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #A34B3C;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background-color: #B85C4C;
+    color: #FFFFFF;
+    padding: 15px 0;
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 480px) {
 
-    /*HOME*/
     .cabeca {
         width: 100%;
     }
@@ -226,28 +353,23 @@ footer{
 
     #title-container {
         min-width: 100%;
-     
-        margin-top: 20px;
-    }
-
-    #post-container {
         margin-top: 20px;
     }
 
     .post-box {
         flex: 100% 1 0;
         padding: 15px;
-        margin: 0;
+        margin: 0 0 15px 0;
     }
 
-    /*POST*/
-    #post-container{
+    #post-container {
         grid-template-columns: 100%;
         padding: 15px;
         grid-template-areas: "main" "sidebar";
+        margin-top: 20px;
     }
 
-    .img-container img{
+    .img-container img {
         width: 100%;
     }
 }
