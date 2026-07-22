@@ -1,32 +1,33 @@
 <?php
+  // data/posts.php
 
   $posts = [
     [
       'id' => 1,
-      'title' => 'Programando em PHP',
-      'description' => 'Neste post você vai aprender tudo que precisa para ser um bom programador de PHP!',
-      'tags' => ['programação', 'PHP', 'lógica de programação'],
-      'img' => 'prog-1.jpg'
+      'title' => 'Bolachas de Manteiga com Limão',
+      'description' => 'Biscoitos delicados que derretem na boca, com o toque cítrico e fresco perfeito para acompanhar um chá.',
+      'img' => 'bolachas-limao.jpg',
+      'tags' => ['Bolachas', 'Cítrico', 'Café da Manhã']
     ],
     [
       'id' => 2,
-      'title' => 'Orientação a Objetos com Java',
-      'description' => 'Aprenda o paradigma de orientação a objetos com Java, uma linguagem em alta no mercado.',
-      'tags' => ['Java', 'OOP', 'Programação Avançada'],
-      'img' => 'prog-2.jpg'
+      'title' => 'Magno Caseiro',
+      'description' => 'A versão artesanal do clássico gelado: interior cremoso de baunilha com uma cobertura de chocolate super crocante.',
+      'img' => 'magno-caseiro.png',
+      'tags' => ['Gelados', 'Chocolate', 'Sobremesa']
     ],
     [
       'id' => 3,
-      'title' => 'A importância da lógica de programação',
-      'description' => 'A lógica de programação é o ponto inicial de muitos estudantes de programação, será que é importante?',
-      'tags' => ['lógica', 'programação', 'algoritmos'],
-      'img' => 'prog-3.jpg',
+      'title' => 'Bolo de Chocolate Húmido',
+      'description' => 'A receita definitiva de bolo de chocolate: massa super escura, húmida na medida certa e com uma calda brilhante.',
+      'img' => 'bolo-chocolate.jpg',
+      'tags' => ['Bolos', 'Chocolate', 'Favoritos']
     ],
     [
       'id' => 4,
-      'title' => 'Programando em PHP',
-      'description' => 'Neste post você vai aprender tudo que precisa para ser um bom programador de PHP!',
-      'tags' => ['programação', 'PHP', 'lógica de programação'],
-      'img' => 'prog-4.jpg'
-    ],
+      'title' => 'Pães Doces',
+      'description' => 'Pãezinhos doces tradicionais, super fofinhos e perfeitos para comer ainda quentes com manteiga.',
+      'img' => 'paes-doces.jpg',
+      'tags' => ['Pães Doces', 'Tradicional', 'Lanche']
+    ]
   ];
