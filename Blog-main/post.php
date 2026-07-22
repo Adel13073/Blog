@@ -1,12 +1,12 @@
 <?php 
-  include_once("templates/header.php"); // Carrega o topo e o array $posts
+  include_once("templates/header.php"); 
 
-  // Verifica se o ID foi passado na URL[cite: 3]
+  // Verifica se o ID foi passado na URL
   if (isset($_GET['id'])) {
       $postId = $_GET['id'];
       $currentPost = null;
 
-      // Busca a receita correspondente ao ID[cite: 3]
+      // Busca a receita correspondente ao ID
       foreach ($posts as $post) {
           if ($post['id'] == $postId) {
               $currentPost = $post;
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-       <!-- Barra Lateral Adaptada para Ingredientes da Receita Atual -->
+       
      <aside id="nav-container">
     <h3 id="tags-title">Ingredientes</h3>
     <ul id="tag-list">

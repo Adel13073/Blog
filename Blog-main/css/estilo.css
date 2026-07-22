@@ -9,12 +9,18 @@
 html {
     min-height: 100vh;
     position: relative;
-    background-color: #FDFBF7; /* Fundo creme/baunilha suave */
+    background-color: #FDFBF7; 
     color: #2C1E1B;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
-    margin-bottom: 250px;
+    flex:1;
+    margin-bottom: 50px;
 }
 
 /* NAVBAR */
@@ -183,7 +189,7 @@ main {
     border-radius: 8px;
 }
 
-/* POST ASIDE (BARRA LATERAL DE INGREDIENTES E CATEGORIAS) */
+
 #nav-container, .nav-container {
     grid-area: sidebar;
 }
@@ -205,7 +211,7 @@ main {
     margin: 0;
 }
 
-/* Estilo do item de ingrediente (.ingrediente-item) */
+
 #tag-list li, .ingrediente-item {
     position: relative;
     padding-left: 18px;
@@ -215,7 +221,7 @@ main {
     font-size: 15px;
 }
 
-/* Ponto minimalista delicado para os ingredientes */
+
 #tag-list li::before, .ingrediente-item::before {
     content: "";
     position: absolute;
@@ -224,7 +230,7 @@ main {
     transform: translateY(-50%);
     width: 6px;
     height: 6px;
-    background-color: #D98A7B; /* Ponto em tom Rosa Chá */
+    background-color: #D98A7B; 
     border-radius: 50%;
 }
 
@@ -242,7 +248,7 @@ main {
     color: #D98A7B;
 }
 
-/* CONTACTO.PHP */
+
 #contact-container {
     max-width: 600px;
     margin: 40px auto;

@@ -43,5 +43,5 @@ include_once 'templates/header.php'; // Inclui o topo do blog[cite: 1]
 </main>
 
 <?php
-include_once 'templates/footer.php'; // Inclui o rodapé do blog[cite: 1]
+include_once 'templates/footer.php';
 ?>

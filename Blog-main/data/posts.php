@@ -25,7 +25,7 @@
     ],
     [
       'id' => 4,
-      'title' => 'Bolinhos Fofos / Pães Doces',
+      'title' => 'Pães Doces',
       'description' => 'Pãezinhos doces tradicionais, super fofinhos e perfeitos para comer ainda quentes com manteiga.',
       'img' => 'paes-doces.jpg',
       'tags' => ['Pães Doces', 'Tradicional', 'Lanche']
